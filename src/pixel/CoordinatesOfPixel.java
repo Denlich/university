@@ -4,6 +4,11 @@ public abstract class CoordinatesOfPixel {
     private final int x;
     private final int y;
 
+    public CoordinatesOfPixel() {
+        x = 0;
+        y = 0;
+    }
+
     public CoordinatesOfPixel(int x, int y) {
         this.x=x;
         this.y=y;
@@ -21,6 +26,6 @@ public abstract class CoordinatesOfPixel {
 
     @Override
     public String toString() {
-        return "PixelParam {" + "x=" + x + ", y=" + y + '}';
+        return "Coordinates {" + "x=" + x + ", y=" + y + "} ";
     }
 }

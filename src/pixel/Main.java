@@ -9,9 +9,12 @@ public class Main {
         System.out.println(pixel2.newCoordinates(1, 1));
 
         ColourfulPixel pixel3 = new ColourfulPixel(1, 2);
-        System.out.println(pixel3.changeProperties("#0f0", .5));
+        System.out.println(pixel3.changeProperties(.5));
 
-        ColourfulPixel pixel4 = new ColourfulPixel(0, 0);
-        System.out.println(pixel4.changeProperties(0.1));
+        ColourfulPixel pixel4 = new ColourfulPixel();
+        System.out.println(pixel4.changeProperties("#333", 1));
+
+        ColourfulPixel pixel5 = new ColourfulPixel();
+        System.out.println(pixel5.changeProperties());
     }
 }
