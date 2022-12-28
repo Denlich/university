@@ -41,7 +41,7 @@ public class ColourfulPixel extends CoordinatesOfPixel {
      * */
 
     public ColourfulPixel changeProperties() {
-        return new ColourfulPixel(getX(), getY(), getColour(), getOpacity());
+        return this;
     }
 
     public ColourfulPixel changeProperties(String colour, double opacity) {
