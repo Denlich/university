@@ -1,12 +1,14 @@
 package pixel;
 
+import java.util.Objects;
+
 public class ColourfulPixel extends CoordinatesOfPixel {
     private final String colour;
     private final double opacity;
 
     /*
-    * Here we are overloading constructor of the ColourfulPixel class
-    * */
+     * Here we are overloading constructor of the ColourfulPixel class
+     * */
 
     public ColourfulPixel() {
         colour = "Empty";
@@ -26,8 +28,8 @@ public class ColourfulPixel extends CoordinatesOfPixel {
     }
 
     /*
-    * Here we are override newCoordinates method from abstract class CoordinatesOfPixel
-    * */
+     * Here we are override newCoordinates method from abstract class CoordinatesOfPixel
+     * */
 
     @Override
     public CoordinatesOfPixel newCoordinates(int x, int y) {
@@ -35,8 +37,8 @@ public class ColourfulPixel extends CoordinatesOfPixel {
     }
 
     /*
-    * Here we are overloading changeProperties method
-    * */
+     * Here we are overloading changeProperties method
+     * */
 
     public ColourfulPixel changeProperties() {
         return new ColourfulPixel(getX(), getY(), getColour(), getOpacity());
@@ -55,8 +57,8 @@ public class ColourfulPixel extends CoordinatesOfPixel {
     }
 
     /*
-    * Here are getters
-    * */
+     * Here are getters
+     * */
 
     public String getColour() {
         return colour;
@@ -69,5 +71,22 @@ public class ColourfulPixel extends CoordinatesOfPixel {
     @Override
     public String toString() {
         return super.toString() + "Colour {" + "colour='" + colour + '\'' + ", opacity=" + opacity + '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+
+        ColourfulPixel colourfulPixel = (ColourfulPixel) o;
+
+        return Objects.equals(getColour(), colourfulPixel.getColour()) &&
+                Objects.equals(getOpacity(), colourfulPixel.getOpacity());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), getColour(), getOpacity());
     }
 }

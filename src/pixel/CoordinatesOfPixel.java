@@ -1,5 +1,7 @@
 package pixel;
 
+import java.util.Objects;
+
 public abstract class CoordinatesOfPixel {
     private final int x;
     private final int y;
@@ -27,5 +29,21 @@ public abstract class CoordinatesOfPixel {
     @Override
     public String toString() {
         return "Coordinates {" + "x=" + x + ", y=" + y + "} ";
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getX(), getY());
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if(this == o) return true;
+        if(o == null || getClass() != o.getClass()) return false;
+
+        CoordinatesOfPixel coordinatesOfPixel = (CoordinatesOfPixel) o;
+
+        return getX() == coordinatesOfPixel.getX() &&
+                getY() == coordinatesOfPixel.getY();
     }
 }
