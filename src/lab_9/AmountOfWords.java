@@ -9,7 +9,8 @@ public class AmountOfWords {
         printResult(" ");
         printResult("Check the sentence on amount of words");
         printResult("123nj word notWord1, 92183492438");
-        printResult("Hello World!");
+        printResult("Hello World !");
+        printResult("! ,");
     }
 
     public static void printResult(String sentence) {
@@ -41,7 +42,7 @@ public class AmountOfWords {
      * */
     public static boolean isTheWord(String word) {
         for (int i = 0; i < word.length(); i++) {
-            if (Character.isDigit(word.charAt(i))) {
+            if (!Character.isLetter(word.charAt(i))) {
                 return false;
             }
         }
