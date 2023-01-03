@@ -29,7 +29,7 @@ public class HexStringToInt {
             String hexadecimal = hexString.substring(i, i + 1).toUpperCase();
             int pow = hexString.length() - 1 - i;
 
-            result += convertToDecimal(hexadecimal) * (Math.pow(radix, pow));
+            result += convertToDecimal(hexadecimal) * Math.pow(radix, pow);
         }
 
         return result;
