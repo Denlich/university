@@ -25,7 +25,7 @@ public class AmountOfWords {
      * Here we are calculating amount of words in sentnce
      * */
     public static int amountOfWords(String sentence) {
-        String[] words = sentence.trim().split(" |\\. |, |\\? |!");
+        String[] words = sentence.trim().split("[ !?.,\"']");
         int count = 0;
 
         for (String word : words) {
