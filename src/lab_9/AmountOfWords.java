@@ -8,9 +8,8 @@ public class AmountOfWords {
         printResult("21349138");
         printResult(" ");
         printResult("Check the sentence on amount of words");
-        printResult("123nj word notWord1, 92183492438");
-        printResult("Hello World!");
-        printResult("! ,");
+        printResult("123nj word notWord1 92183492438");
+        printResult("Hello World");
     }
 
     public static void printResult(String sentence) {
@@ -25,7 +24,7 @@ public class AmountOfWords {
      * Here we are calculating amount of words in sentnce
      * */
     public static int amountOfWords(String sentence) {
-        String[] words = sentence.trim().split("[ !?.,\"']");
+        String[] words = sentence.split(" ");
         int count = 0;
 
         for (String word : words) {
@@ -41,15 +40,11 @@ public class AmountOfWords {
      * Here we are checking if the word from the sentence has only letters, whether not - we are returning false
      * */
     public static boolean isTheWord(String word) {
-        if (!word.equals("")) {
-            for (int i = 0; i < word.length(); i++) {
-                if (!Character.isLetter(word.charAt(i))) {
-                    return false;
-                }
+        for (int i = 0; i < word.length(); i++) {
+            if (!Character.isLetter(word.charAt(i))) {
+                return false;
             }
-            return true;
         }
-
-        return false;
+        return true;
     }
 }
