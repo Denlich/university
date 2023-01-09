@@ -25,14 +25,18 @@ public class Main {
             tef.getStudents().add(new Student("Veronika", "Lishchinska", 4387, 93));
             tef.getStudents().add(new Student("Yaroslav", "Thewsse", 3578, 100));
             tef.getStudents().add(new Student("Illa", "Melnyk", 2357, 60));
-            tef.getStudents().add(null);
 
             kpi.getFaculties().add(fiot);
             kpi.getFaculties().add(ipsa);
             kpi.getFaculties().add(tef);
 
+            System.out.println("Amount of students:");
             System.out.println(amountOfStudents(kpi));
+            System.out.println("========================");
+            System.out.println("The biggest faculty:");
             System.out.println(theBiggestFaculty(kpi));
+            System.out.println("========================");
+            System.out.println("Students with grade above 95");
             System.out.println(excellentStudents(kpi));
         } catch (NullPointerException e) {
             System.out.println(e.getMessage());
@@ -44,15 +48,7 @@ public class Main {
 
         for (Iterator<Faculty> i = institute.getFaculties().iterator(); i.hasNext();) {
             Faculty f = i.next();
-
-            for (Iterator<Student> j = f.getStudents().iterator(); j.hasNext();) {
-                Student s = j.next();
-                amount++;
-            }
-
-            for (Student s : f.getStudents()) {
-                amount++;
-            }
+            amount += f.getStudents().size();
         }
 
         return amount;
